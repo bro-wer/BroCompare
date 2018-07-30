@@ -22,6 +22,9 @@ class ViewPanel(object):
 
     def __load_images(self):
         self.greenPlusPhoto=PhotoImage(file=os.path.join("src", "images", "green_plus.png"))
+        self.closedDirPhoto=PhotoImage(file=os.path.join("src", "images", "closeddir.png"))
+        self.openDirPhoto=PhotoImage(file=os.path.join("src", "images", "opendir.png"))
+        self.fileIcon=PhotoImage(file=os.path.join("src", "images", "fileicon.png"))
 
     def _prepareFrame(self):
         self.frame = LabelFrame(self.master,)
@@ -47,7 +50,7 @@ class ViewPanel(object):
         self.frameBottomPart.pack(side=BOTTOM)
 
     def addFrameToMaster(self):
-        return self.frame.pack(side=LEFT)
+        return self.frame.pack(side=LEFT, expand=YES)
 
     def openButtonAction(self):
         print("Open button clicked!!")
